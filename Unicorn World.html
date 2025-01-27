@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<!-- saved from url=(0032)http://127.0.0.1:5500/index.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unicorn World</title>
+  <link rel="stylesheet" href="./Unicorn World_files/style.css">
+<style type="text/css" id="operaUserStyle"></style></head>
+<body>
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="container">
+      <h1>Welcome to Unicorn World!</h1>
+      <p>A magical place where unicorns live and play!</p>
+      <a href="http://127.0.0.1:5500/index.html#about" class="cta-button">Explore</a>
+    </div>
+  </header>
+
+  <!-- About Unicorns Section -->
+  <section id="about" class="about">
+    <h2>About Unicorns</h2>
+    <p>Unicorns are magical creatures that bring joy and happiness. They are known for their beautiful horns and colorful manes. Let’s learn more about them!</p>
+  </section>
+
+  <!-- Fun Facts Section -->
+  <section id="fun-facts" class="fun-facts">
+    <h2>Fun Unicorn Facts</h2>
+    <ul>
+      <li>Unicorns are believed to have the power of healing!</li>
+      <li>They love eating rainbow-colored food!</li>
+      <li>Their horns are said to have magical powers!</li>
+      <li>Unicorns can run faster than the speed of light!</li>
+    </ul>
+  </section>
+
+  <!-- Activities Section -->
+  <section id="activities" class="activities">
+    <h2>Unicorn Activities</h2>
+    <div class="activity-card">
+      <h3>Unicorn Coloring</h3>
+      <p>Grab your crayons and color your very own unicorn!</p>
+    </div>
+    <div class="activity-card">
+      <h3>Unicorn Dance Party</h3>
+      <p>Let’s have a magical dance party with the unicorns!</p>
+    </div>
+    <div class="activity-card">
+      <h3>Unicorn Puzzle</h3>
+      <p>Complete the unicorn puzzle and see the magic unfold!</p>
+    </div>
+  </section>
+  <!-- Gallery Section -->
+  <section id="gallery" class="gallery">
+    <h2>Unicorn Gallery</h2>
+    <div class="gallery-item">
+      <img src="./Unicorn World_files/gallery1 - Copy.jpeg" alt="Unicorn 1">
+    </div>
+    <div class="gallery-item">
+      <img src="./Unicorn World_files/gallery2 - Copy.jpeg" alt="Unicorn 2">
+    </div>
+    <div class="gallery-item">
+      <img src="./Unicorn World_files/gallery3 - Copy.jpeg" alt="Unicorn 3">
+    </div>
+    <div class="gallery-item">
+      <img src="./Unicorn World_files/gallery4 - Copy.jpeg" alt="Unicorn 4">
+    </div>
+  </section>
+
+  <!-- Lightbox HTML -->
+  <div id="lightbox" class="lightbox" style="display:none;">
+    <span class="close" onclick="closeLightbox()">×</span>
+    <img class="lightbox-content" id="lightbox-img">
+  </div>
+
+  <!-- Testimonials Section -->
+ 
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <h2>Contact the Unicorns</h2>
+    <p>Have any questions? You can send your magical messages here!</p>
+    <form>
+      <input type="text" placeholder="Your Name">
+      <textarea placeholder="Your Message"></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Unicorn World. Magic is real!</p>
+  </footer>
+
+  <script>
+    const galleryItems = document.querySelectorAll('.gallery-item img');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+  
+    galleryItems.forEach(item => {
+      item.addEventListener('click', () => {
+        lightbox.style.display = 'block';
+        lightboxImg.src = item.src;
+      });
+    });
+  
+    function closeLightbox() {
+      lightbox.style.display = 'none';
+    }
+  </script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+
+</body></html>
